@@ -18,15 +18,15 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 <img src="screenshots/UI2a.jpg" width=1000><br>
 
 
-## Getting Panopuzzle for your own web site
+## Getting PanoPuzzle for your own web site
 
 ### Getting the code
 
-### Preparing the cube-faces
+### Preparing the panoramic images
 
-### Changing the configuration file
+### Creating and changing the configuration file
 
 ## live examples
-### over on Panopuzzle.created-by.me
+### over on PanoPuzzle.created-by.me
 ### here on GitHub to show a configuration with only one category
 ### here on Github to show a configuration with several categories
