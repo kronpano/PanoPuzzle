@@ -1,0 +1,14 @@
+body 
+{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	background-color: #ccccff;
+	margin: 0px;
+	overflow: hidden;
+}
+
+h2,h3,h4,h6
+{
+	margin: 12px;
+}

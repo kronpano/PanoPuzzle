@@ -1,0 +1,391 @@
+/* this file contains the css for pretty much everything except the fields of the settings panel which is defined in UI.css*/
+#status {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display:block;
+	text-shadow: 1px 1px 2px black, 0 0 15px red, 0 0 5px red;
+	color:lightgrey;
+	cursor:default;
+	visibility: visible;
+	transition: 0.3s
+}
+
+@keyframes blinkingText{
+	0%{		text-shadow: 1px 1px 2px red, 0 0 5px red, 0 0 10px red, 0 0 15px red;}
+	50%{	text-shadow: none;}
+	100%	{text-shadow: 1px 1px 2px red, 0 0 5px red, 0 0 10px red, 0 0 15px red;}
+}
+
+.glow {
+	color: #fff;
+	text-align: center;
+	-webkit-animation: glow 2s ease-in-out infinite alternate;
+	-moz-animation: glow 2s ease-in-out infinite alternate;
+	animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+	from {
+	  text-shadow: 0px 1px 2px black, 0 0 1px grey, 0 0 1px black;
+	  transform: scale(1,1);
+	}
+	to {
+	  text-shadow: 0 0 20px #fff, 0 0 5px red, 0 0 10px red, 0 0 12px red, 0 0 16px red, 0 0 18px orange, 0 0 20px yellow;
+	  transform: scale(1.1,1.1);
+	}
+  }
+
+#complete {
+	position: relative;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display:block;
+	text-shadow: 1px 1px 2px black, 0 0 15px grey, 0 0 5px darkgrey;
+	color:lightgrey;
+	font-Size: x-large;
+	cursor:none;
+	visibility: hidden;
+	animation: blinkingText 0.5s infinite;
+}
+
+#nextLevel {
+	position: absolute;
+	visibility: hidden;
+	top: 10px;
+	right: 20px;
+	width: 10%;
+	text-align: right;
+	z-index: 100;
+	display:block;
+	cursor:pointer;
+	color: white;
+	font-Size: large;
+	animation:blinkingText 2s infinite;
+}
+
+#zoomOut {
+	position: absolute;
+	visibility: visible;
+	/*background-color: #aaa;
+	border-radius: 15px;*/
+	font-size: 1em;
+	top: 10px;
+	left: 10px;
+	width: 80px;
+	height: 30px;
+	z-index: 100;
+	display:flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	text-shadow: 1px 1px 2px black, 0 0 5px red, 0 0 10px red;
+	color:rgb(255, 255, 255);
+	cursor:pointer;
+	animation-iteration-count: 10;
+}
+
+#zoomIn {
+	position: absolute;
+	visibility: hidden;
+	/*background-color: #aaa;
+	border-radius: 15px;*/
+	font-size: 1em;
+	top: 10px;
+	left: 10px;
+	width: 80px;
+	height: 30px;
+	z-index: 110;
+	display:flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	text-shadow: 1px 1px 2px black, 0 0 5px red, 0 0 10px red;
+	color:rgb(255, 255, 255);
+	cursor:pointer;
+	animation-iteration-count: 10;
+}
+
+#zoomOut:hover, #zoomIn:hover{
+	background-color: #aaa;
+	border-radius: 15px;
+	opacity: 0.8;
+	transform: scale(1.2,1.2);
+}
+
+#info {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border:2px solid black;
+  background-image: radial-gradient(rgba(170, 170, 170, 0.95),rgba(180, 180, 180, 0.6));
+  text-align: center;
+  font-Size: x-large;
+  box-shadow: 5px 10px 10px black;
+  visibility: visible;
+  cursor:default;
+}
+
+#currentlyPlaying {
+	font-size: 1.2em;
+	padding-top: 10px;
+	z-index: 110;
+	display:block;
+	text-shadow: 2px 3px 2px black, 0 0 5px red, 0 0 10px red;
+	color:rgb(255, 255, 255);
+	cursor:pointer;
+	animation-iteration-count: 40;
+}
+
+#cogIcon{
+	animation:glow 2s ease-in-out infinite alternate;
+	animation-iteration-count: 10;
+}
+
+#infoLink{
+  display: inline;   
+  cursor:pointer;
+}
+
+#info #version{
+  display: inline;	
+  text-align: center;
+  
+}
+
+h5{
+	/*font-size: max(1.2vmax,12px);*/
+	font-size: calc(10px + 0.4vmax);
+	margin: 5px;
+}
+
+
+#shareDiv {
+	display: inline-block;
+	position: absolute;
+	background-color: #aaa;
+	opacity: 0.9;
+	left:50%;
+	top: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 310px;
+	border: 2px solid black;
+	border-radius:  15px;
+	box-shadow: 5px 10px 10px rgb(37, 37, 37);
+	visibility: hidden;
+	overflow: visible;
+	cursor:pointer;
+	padding: 8px 0 8px 8px;
+  }
+
+#TabButtonCurrent, #TabButtonMore{
+	position:absolute;
+	width: 50%;
+	height: 24px;
+	left:-2px;
+	top:-24px;
+	border-radius: 15px 15px 0px 0px;
+	outline:none;
+}
+#TabButtonCurrent{
+	border-right: 2px solid;
+	border-left: 2px solid;
+	border-top: 2px solid;
+}
+#TabButtonMore{
+	left:50.75%;
+	top:-24px;
+	border-left: 2px solid;
+	border-right: 2px solid;
+	border-top: 2px solid;
+	margin-left: -1px;
+}
+.tabactive{
+	background-color: #aaa;
+	border-bottom: none;
+}
+
+.tabpassive{
+	border-bottom: 2px solid;
+	background-color: #eee;
+	cursor: pointer;
+}
+
+
+#showall {
+	font-size: 9px;
+  }
+  @media screen and (min-width: 320px) {
+	#showall {
+	  font-size: calc(9px + 6 * ((100vw - 320px) / 680));
+	}
+  }
+  @media screen and (min-width: 1000px) {
+	#showall {
+	  font-size: 14px;
+	}
+  }
+
+#showall {
+	display: inline-block;
+	position: absolute;
+	background-color: #aaa;
+	left:50%;
+	top: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	max-width: 400px;
+	max-height:600px;
+	border: 2px solid black;
+	border-radius:  0 0 15px 15px;
+	box-shadow: 5px 10px 10px rgb(0, 0, 0);
+	visibility: hidden;
+	overflow: visible;
+	cursor:pointer;
+	padding-bottom: 0px;;
+  }
+
+#showcurrent, #showmore {
+	display: inline-block;
+	position: relative;
+	background-color: #aaa;
+	border-radius: 15px;
+	visibility: hidden;
+	overflow: auto;
+	cursor:pointer;
+  }
+
+.divclosebtn{
+	background-color: transparent;
+	border: none;
+	color: #eeeeee;
+	margin-left: 15px;
+	font-size: 32px;
+	cursor: pointer;
+	outline: none;
+	border-radius: 50%;
+}
+
+.divclosebtn:hover { 
+	/*background-color: #34A7C1;*/ 
+	color: #444;
+}
+
+#FullScreen {
+  position: absolute;
+  bottom: 10px;
+  right:10px;
+  opacity: 0.8;
+  visibility: visible;
+  cursor:pointer;
+}
+
+#share, #close-share {
+	position: absolute;
+	bottom: 10px;
+	right:50px;
+	opacity: 0.8;
+	visibility: visible;
+	cursor:pointer;
+}
+
+#close-share{
+	visibility: hidden;
+	-webkit-filter: invert(100%);
+	filter: invert(100%);
+	transform: translateX(5px);
+	background-color: rgba(0, 150, 150, 0.7);
+	border-radius: 50%;
+}
+
+#ExitFullScreen {
+  position: absolute;
+  bottom: 10px;
+  right:10px;
+  opacity: 0.8;
+  visibility: hidden;
+  cursor:pointer;
+}
+
+
+/* for the showAll table */
+table {
+	width: 100%;
+	padding: 2%;
+}
+
+tr { 
+	display: flex; 
+	margin: 2px 0px;
+	padding: 2px; 
+	border: 1px solid  #83838375;
+	border-radius: 15px;
+	box-shadow: 3px 3px rgba(0, 0, 0, 0.8);
+}
+td	{
+	padding-left: 3px;
+}
+td:last-child{
+	padding-right: 5px;
+}
+td:nth-child(3){
+	flex-grow: 1;
+}
+
+tr:nth-child(even) {
+	background-color: #bbbbbb;
+}
+tr:nth-child(odd) {
+	background-color: #cccccc;
+}
+tr.current { 
+	background: rgba(106, 236, 91, 0.555);
+}
+tr:hover, .tabpassive:hover { 
+	background: #34A7C1; 
+}
+
+
+a.PuzzleLink{
+	color: black;
+	text-decoration: none;
+}
+
+a.PuzzleLink:hover{
+	color:blue;
+}
+
+.ribbon {
+	position: absolute;
+	right: 1px;
+	z-index: 1;
+	overflow: hidden;
+	width: 120px; height: 75px;
+	text-align: right;
+	background: rgba(255, 127, 80, 0);
+  }
+  .ribbon a {
+	font-size: 12px;
+	font-weight: normal;
+	color: rgb(0, 0, 0);
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 20px;
+	transform: rotate(35deg);
+	-webkit-transform: rotate(35deg);
+	width: 180px;
+	display: block;
+	background: #34a7c1e1;
+	box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+	position: absolute;
+	top: 20px; right: -50px;
+	text-decoration:none;
+  }
