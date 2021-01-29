@@ -1,7 +1,8 @@
 # PanoPuzzle
 A 360 panoramic puzzle game
 
-The game subdivides the cubefaces of a 360 panorama and rotates some of them - how many can be chosen in the settings via the easy/normal/hard switch.
+The game subdivides the cubefaces of a 360 panorama and rotates some of them 
+It is your job to find and rotate all the wrong ones and restore the 360 panorama to it's original glory.
 
 Still working to get the description, instructions, demo and the code in here.<br>
 Currently the repository is open if somebody has issues with PanoPuzzle so they can report them here.
