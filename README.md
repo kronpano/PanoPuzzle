@@ -12,6 +12,6 @@ Main screen when starting the game will look like this
 <img src="screenshots/MainInfo.jpg" width=800>
 This give you pretty much all the information you need to play the game - just look around by dragging the panoramic image with the finger/mouse or move your mobile device around and click/tap on a tile to rotate it until all the tiles are pointing in the right direction.
 
-Some settings can be changed, puzzles can be selected directly and puzzle categories can be changed by using the clicking/tapping the settings icon at the bottom left of the screen
-<img src="screenshots/SettingsAndCollections" width=1000>
+Some settings can be changed, puzzles can be selected directly and puzzle categories can be changed by using the clicking/tapping the settings cog icon at the bottom left of the screen
+<img src="screenshots/SettingsAndCollections.jpg" width=1000>
 
