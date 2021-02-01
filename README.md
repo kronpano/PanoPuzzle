@@ -1,6 +1,6 @@
 # PanoPuzzle
 A 360 panoramic puzzle game - create longer interactions with your 360 images
-<img src="screenshots/PanoPuzzleLogo_4.png" align="right" width="350" height="350">
+<img src="screenshots/PanoPuzzleLogo_4.png" align="right" width="320" height="320">
   
 The game subdivides the cubefaces of a 360 panorama and rotates some of them.<br> 
 It is your job to find and rotate all the wrongly rotated ones and restore the 360 panorama to it's original glory.
@@ -10,7 +10,7 @@ Currently the repository is open if somebody has issues with PanoPuzzle so they 
 
 The panopuzzlev2 link will be removed and replaced by the panopuzzle URL in the next week if no major issues are reported.
 
-Main screen when starting the game will look like this
+When starting the game it will look like this
 <img src="screenshots/MainInfo.jpg" width=1000><br>
 This gives you all the information you need to play the game - just look around by dragging the panoramic image with the finger/mouse or move your mobile device around and click/tap on a tile to rotate it until all the tiles are pointing in the right direction.<br>
 Some settings can be changed, puzzles can be selected directly and puzzle categories can be changed by clicking/tapping the settings cog-icon at the bottom left of the screen which will open up a small settings panel.
