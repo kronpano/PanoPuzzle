@@ -28,7 +28,7 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 ### over on PanoPuzzle.created-by.me
 ### here on GitHub to show a configuration with only one category
 using the PanoPuzzle_config_1.js config file called by PanoPuzzleOneCollection.html the following puzzle web page was created 
-https://kronpano.github.io/PanoPuzzle/PanoPuzzleObeCollection.html
+https://kronpano.github.io/PanoPuzzle/PanoPuzzleOneCollection.html
 ### here on GitHub to show a configuration with several categories
 using the PanoPuzzle_config_2.js config file called by PanoPuzzleTwoCollection.html the following puzzle web page was created 
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleTwoCollection.html
