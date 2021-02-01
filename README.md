@@ -59,7 +59,6 @@ The directory is the path relative to the images directory
            top.jpg
 ```
 
-
 In the directory (e.g. pano1) the script expects the cube faces named 
 * back.jpg 
 * bottom.jpg
@@ -72,8 +71,7 @@ Please create the cube faces so that they are sized to a power of 2 e.g. 1024x10
 This will prevent the script from complaining (warnings) that the texture is not a power of 2
 
 
-
-I usually use PTGui to make this conversion - this allows to set the size and jpg compression - smaller files load quicker BUT you might get compression artifacts
+I use PTGui to make this conversion - this allows to set the size and jpg compression - smaller files load quicker BUT you might get compression artifacts
 
 there are also free online services you can use to convert an equirectangular image to cube faces like
 
