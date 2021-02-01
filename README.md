@@ -70,15 +70,20 @@ In the directory (e.g. pano1) the script expects the cube faces named
 Please create the cube faces so that they are sized to a power of 2 e.g. 1024x1024 or 2048x2048
 This will prevent the script from complaining (warnings) that the texture is not a power of 2
 
-
 I use PTGui to make this conversion - this allows to set the size and jpg compression - smaller files load quicker BUT you might get compression artifacts
 
 there are also free online services you can use to convert an equirectangular image to cube faces like
-
+https://360toolkit.co/convert-spherical-equirectangular-to-cubemap<br>
+or<br>
 https://jaxry.github.io/panorama-to-cubemap/
 
-and free tools for download
+and free tools for download (windows)<br>
 https://pragmar.com/qbit/
+
+This conversion could be implemented in javascript as well but it would need to run every time again to convert an equirectangular image to it's cubemap.
+Doing it in javascript means it would use the device for the conversion which might take some time/proessing power...
+
+Doing it "offline" also gives the user the possibility to choose a jpg compression which makes the image files small enough but doesn't leave too many compression artifacts. I usually end up using a compression between 50-70 - using a higher compression for 2048x2048 files to shrink them a bit more.
 
 ### Creating and changing the configuration file
 
