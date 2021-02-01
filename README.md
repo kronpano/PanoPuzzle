@@ -5,10 +5,6 @@ A 360 panoramic puzzle game - create longer interactions with your 360 images
 The game subdivides the cubefaces of a 360 panorama and rotates some of them.<br> 
 It is your job to find and rotate all the wrongly rotated ones and restore the 360 panorama to it's original glory.
 
-Still working to get the description, instructions, demo and the code in here.<br>
-Currently the repository is open if somebody has issues with PanoPuzzle so they can report them here.
-
-The panopuzzlev2 link will be removed and replaced by the panopuzzle URL in the next week if no major issues are reported.
 
 When starting the game it will look like this
 <img src="screenshots/MainInfo.jpg" width=1000><br>
