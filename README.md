@@ -74,7 +74,7 @@ This will prevent the script from complaining (warnings) that the texture is not
 
 I use PTGui to make this conversion - this allows to set the size and jpg compression - smaller files load quicker BUT you might get compression artifacts
 
-there are also free online services you can use to convert an equirectangular image to cube faces like<br>
+There are also free online services you can use to convert an equirectangular image to cube faces like<br>
 https://360toolkit.co/convert-spherical-equirectangular-to-cubemap<br>
 or<br>
 https://jaxry.github.io/panorama-to-cubemap/<br>
@@ -96,15 +96,15 @@ My PanoPuzzle - which started all of this can be seen under https://panopuzzle.c
 it consists of several collections of 360 panoramas
 
 ### - on GitHub to show a configuration with only one collection
-using the <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> config file called by <a href="PanoPuzzleOneCollection.html">PanoPuzzleOneCollection.html</a> (at the end) the following puzzle web page was created 
+Using the <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> config file called by <a href="PanoPuzzleOneCollection.html">PanoPuzzleOneCollection.html</a> (at the end) the following puzzle web page was created 
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleOneCollection.html<br>
 The configuration file has only one collection so there will be no possibility to change the collection
 
 ### - on GitHub to show a configuration with several collections
-using the <a href="include/PanoPuzzle_config_2.js">PanoPuzzle_config_2.js</a> config file called by <a href="PanoPuzzleTwoCollection.html">PanoPuzzleTwoCollection.html</a> (at the end)  the following puzzle web page was created 
+Using the <a href="include/PanoPuzzle_config_2.js">PanoPuzzle_config_2.js</a> config file called by <a href="PanoPuzzleTwoCollection.html">PanoPuzzleTwoCollection.html</a> (at the end)  the following puzzle web page was created 
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleTwoCollection.html<br>
 The configuration file has four collections so you can choose which collection you want to play.
 
 ### - on GitHub to show all the build in subdivision patterns
-using the <a href="include/PanoPuzzle_config_grid.js">PanoPuzzle_config_grid.js</a> config file called by <a href="PanoPuzzleGridDemo.html">PanoPuzzleGridDemo.html</a>  the following puzzle web page was created 
+Using the <a href="include/PanoPuzzle_config_grid.js">PanoPuzzle_config_grid.js</a> config file called by <a href="PanoPuzzleGridDemo.html">PanoPuzzleGridDemo.html</a>  the following puzzle web page was created 
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleGridDemo.html
