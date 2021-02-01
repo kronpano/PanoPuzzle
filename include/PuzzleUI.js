@@ -2,16 +2,19 @@
 
 // CHANGES IN THIS FILE MIGHT BREAK THINGS - ONLY CHANGE IF YOU KNOW WHAT YOU ARE DOING
 
-const baseURL = window.location.href.split("?")[0];
+// which configuration to read for the current puzzle collection
+var whichConfig = whichDefaultConfig;
 
 var linkLookupObj = {}; 	// lookup table object which convertes the uniqueID of each puzzle - for social media sharing - to config/pano value
 							// doing this so a shared link still points to the correct panorama even if the configuration has changed
 
-var howDifficult = 2;	 // used in 3 way switch easy/normal/hard and passed through 1: easy, 2: normal as in config, 3: hard
+var howDifficult;	 // used in 3 way switch easy/normal/hard and passed through 1: easy, 2: normal as in config, 3: hard
 
 var hints;
 var hintstimer;
 var hintstart = 0;
+
+check_UI_values(); // check if there is previous settings - if so - restore them
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("dtime");
@@ -46,6 +49,7 @@ function CountToggle() {
   } else {
     document.getElementById("status").style.transform = "scale(0,0)";  
   }
+  saveUI_Values();
 }
 
 var rotateDir;
@@ -79,7 +83,7 @@ function DragToggle() {
   saveUI_Values();
 }
 
-function difficulty(how){
+function difficulty(how,who){
 	var easy = document.getElementById("easy");
 	var normal = document.getElementById("normal");
 	var hard = document.getElementById("hard");
@@ -89,37 +93,40 @@ function difficulty(how){
 		selector.style.width = easy.clientWidth + "px";
 		selector.style.backgroundColor = "#37a737";
 		selector.innerHTML = "Easy";
-		document.getElementById("myhintswitch").checked = true;
-		HintToggle();
-		document.getElementById("mycountswitch").checked = true;
-		CountToggle();
+		if(who === "UI"){
+			document.getElementById("myhintswitch").checked = true;
+			HintToggle();
+			document.getElementById("mycountswitch").checked = true;
+			CountToggle();
+		}	
 		howDifficult = 1;
 	}else if(how === "normal"){
 		selector.style.left = easy.clientWidth + "px";
 		selector.style.width = normal.clientWidth + "px";
-		selector.innerHTML = "Normal";
-		document.getElementById("mycountswitch").checked = false;
-		CountToggle();
-		document.getElementById("myhintswitch").checked = true;
-		HintToggle();
-		howDifficult = 2;
 		selector.style.backgroundColor = "#418d92";
-	}else{
+		selector.innerHTML = "Normal";
+		if(who === "UI"){
+			document.getElementById("mycountswitch").checked = false;
+			CountToggle();
+			document.getElementById("myhintswitch").checked = true;
+			HintToggle();
+		}	
+		howDifficult = 2;
+	}else if(how === "hard"){
 		selector.style.left = easy.clientWidth + normal.clientWidth + 1 + "px";
 		selector.style.width = hard.clientWidth + "px";
-		selector.innerHTML = "Hard";
-		document.getElementById("myhintswitch").checked = false;
-		HintToggle();
-		document.getElementById("mycountswitch").checked = false;
-		CountToggle();
-		howDifficult = 3;
 		selector.style.backgroundColor = "#ad2e49";
+		selector.innerHTML = "Hard";
+		if(who === "UI"){
+			document.getElementById("myhintswitch").checked = false;
+			HintToggle();
+			document.getElementById("mycountswitch").checked = false;
+			CountToggle();
+		}
+		howDifficult = 3;
 	}
-	
-	// change the URL to the new one - needs checks that URL exists in the form I want it - if it doesn't then create it
-	window.history.pushState({},'',window.location.href.replace(/hh=\d/g,"hh="+howDifficult)); 
 	saveUI_Values();
-	startGame(); 
+	startGame();            // reflects the changes immediately BUT problem --  easy/normal/hard overwrites user values for counter/hints ???!!!!
 }
 
 // saving user settings 
@@ -134,8 +141,10 @@ function saveUI_Values(){
 			UIsettings.hintstimer = hintstimer;
 			UIsettings.level = howDifficult;
 			UIsettings.count = document.getElementById("mycountswitch").checked; 
+
+			//alert("saveUI "+saveUI_Values.caller +" : " + JSON.stringify(UIsettings,null,2));
 			// save UI settings to local storage
-			localStorage.setItem('PP_UI_settings',JSON.stringify(UIsettings));
+			localStorage.setItem('PP_UI_settings_' + ConfigName,JSON.stringify(UIsettings));
 		} catch (e) {
 		// Alert user for errors
 			console.log('Local Storage error :',e);
@@ -159,12 +168,12 @@ function openNav(event) {
 
 function closeNav(event) {
   event.preventDefault();
-  saveUI_Values();
   document.getElementById("mySidepanel").style.width = "0";
   document.getElementById("mySidepanel").style.paddingLeft = "0";  
   document.getElementById("mySidepanel").style.paddingRight = "0"; 
   document.getElementById("mySidepanel").style.visibility = "hidden"; 
   document.getElementById("cogIcon").style.visibility = "visible";  
+  
 }
 
 // when starting a new puzzle check if the config has changed - if so reflect that in the local storage times, configs....
@@ -174,8 +183,8 @@ function checkConfigChange(){
 	FileConfigs = Object.keys(PP_config);
 	ConfigSettings.configs = [];
 
-	if(localStorage.getItem("PP_Config_settings")){
-		ReadConfigSettings = JSON.parse(localStorage.getItem('PP_Config_settings'));
+	if(localStorage.getItem('PP_Config_settings_' + ConfigName)){
+		ReadConfigSettings = JSON.parse(localStorage.getItem('PP_Config_settings_' + ConfigName));
 	}
 	if(ReadConfigSettings){
 		// array intersection to find which elements are in both
@@ -213,7 +222,7 @@ function checkConfigChange(){
 	}
 
 	// Now at last save settings to local storage
-	localStorage.setItem('PP_Config_settings',JSON.stringify(ConfigSettings));
+	localStorage.setItem('PP_Config_settings_' + ConfigName,JSON.stringify(ConfigSettings));
 	//alert(JSON.stringify(ConfigSettings));
 
 	// need to populate the lookup table which convertes the uniqueID of each puzzle - for social media sharing - to config/pano value
@@ -272,8 +281,8 @@ function createShareLinkLookup(){
 }
 
 function saveLevelFinishTime(config, pano, time){
-	if(localStorage.getItem("PP_Config_settings")){
-		ReadConfigSettings = JSON.parse(localStorage.getItem('PP_Config_settings'));
+	if(localStorage.getItem('PP_Config_settings_' + ConfigName)){
+		ReadConfigSettings = JSON.parse(localStorage.getItem('PP_Config_settings_' + ConfigName));
 		// if "time" is 0 that just means the pano has been started so only change a ? (indicating "not played") - don't replace an existing time
 		if(time == 0){
 			var regex = new RegExp(','+pano+'=(0|\\?)');	
@@ -281,23 +290,22 @@ function saveLevelFinishTime(config, pano, time){
 			var regex = new RegExp(','+pano+'=(\\d+|\\?)');
 		}
 		ReadConfigSettings["levelTimes_"+config] = ReadConfigSettings["levelTimes_"+config].replace(regex, ","+pano+"="+time);
-		localStorage.setItem('PP_Config_settings',JSON.stringify(ReadConfigSettings));
+		localStorage.setItem('PP_Config_settings_' + ConfigName,JSON.stringify(ReadConfigSettings));
 	}	
 }
 
-// getting user settings and apply them
+// getting user settings and apply them 
 function read_UI_values(){
-		if (localStorage.getItem('PP_UI_settings')) {
-			UIsettings = JSON.parse(localStorage.getItem('PP_UI_settings'));
+		if (localStorage.getItem('PP_UI_settings_' + ConfigName)) {
+			UIsettings = JSON.parse(localStorage.getItem('PP_UI_settings_' + ConfigName));
+			//alert("start read_UI " + JSON.stringify(UIsettings,null,2));
+			howDifficult=UIsettings.level;
+			if(howDifficult == 1){difficulty('easy','readsettings')};
+			if(howDifficult == 2){difficulty('normal','readsettings')};
+			if(howDifficult == 3){difficulty('hard','readsettings')};
 
-			//whichPano = ReadConfigSettings.whichPano;
 			document.getElementById("myrotateswitch").checked = UIsettings.rotateDir
 			RotateToggle();
-
-			howDifficult=UIsettings.level;
-			if(howDifficult == 1){difficulty('easy')};
-			if(howDifficult == 2){difficulty('normal')};
-			if(howDifficult == 3){difficulty('hard')};
 			
 			document.getElementById("mydragswitch").checked = UIsettings.dragDir
 			DragToggle();
@@ -310,15 +318,27 @@ function read_UI_values(){
 			CountToggle();
 		
 		}else{ // no previous settings
-			difficulty('normal');
-			rotateDir = 1;
-			hintstimer = 20;
+			difficulty('normal','UI');
+			location.reload(); // if nothing is set - so a brand new user everything seems fine BUT not all the tiles are rendered???? No console output, no error - just some tiles missing. A reload solev it.
 		}
 }
 
+function check_UI_values(){
+	if (localStorage.getItem('PP_UI_settings_' + ConfigName)) {
+		UIsettings = JSON.parse(localStorage.getItem('PP_UI_settings_' + ConfigName));
+		howDifficult=UIsettings.level;
+		document.getElementById("myrotateswitch").checked = UIsettings.rotateDir
+		document.getElementById("mydragswitch").checked = UIsettings.dragDir
+		hintstimer = UIsettings.hintstimer;
+		document.getElementById("myhintswitch").checked = UIsettings.hints
+		document.getElementById("mycountswitch").checked = UIsettings.count		
+	}else{
+	}
+}	
+
 // get the URL to see which pano and which config to use
 function checkURL(){
-	//readSessionValues(); // get 'old' settings
+	
 	var returnValue = true;
 	const urlParams = new URLSearchParams(window.location.search);
 
@@ -340,11 +360,13 @@ function checkURL(){
 			whichConfig = urlParams.get('config');
 			if(typeof(PP_config[whichConfig]) == 'undefined')
 			{// if not found set it to first available config
-				whichConfig = Object.keys(PP_config)[0];
+				//whichConfig = Object.keys(PP_config)[0];
+				whichConfig = whichDefaultConfig;
 			}
 		}else{
 			//no config parameter so set it to first available config
-			whichConfig = Object.keys(PP_config)[0];
+			//whichConfig = Object.keys(PP_config)[0];
+			whichConfig = whichDefaultConfig;
 		}
 		// check panorama number - is it a number and available for this configuration
 		if(urlParams.has('pano')){
@@ -362,29 +384,9 @@ function checkURL(){
 			whichPano = Math.floor(Math.random() *(PP_config[whichConfig].length/2 - 1)) + 1; // get a random number in the first half of this category
 		}
 	}
-		
-	// check hh - the "how hard" difficulty parameter
-	if(urlParams.has('hh')){  
-		switch (urlParams.get('hh')) {
-			case "1":	difficulty('easy');
-					break;
-			case "2": difficulty('normal');
-					break;
-			case "3": difficulty('hard');
-					break;
-			default: difficulty('normal');
-						howDifficult=2;		
-		}
-	}else{
-		if (localStorage.getItem('PP_UI_settings')) { // if no hh parameter AND no previous hh in local storage
-			howDifficult=UIsettings.level;
-		}else{
-			difficulty('normal');
-			howDifficult=2;
-		}
-	}
+	
 	// set the URL to reflect the current puzzle
-	window.history.pushState({},'',baseURL+'?config='+whichConfig+'&pano='+whichPano+'&hh='+howDifficult);
+	window.history.pushState({},'',baseURL+'?config='+whichConfig+'&pano='+whichPano);
 	return(returnValue);
 }			
 
@@ -392,8 +394,8 @@ function checkURL(){
 function createShowAllText(){
 	var showAllText="<table><tbody>";
 	//showAllText+='<tr><th>Puzzles in this collection</th></tr>'
-	if (localStorage.getItem('PP_Config_settings')) { // only read the settings 
-		ReadConfigSettings = JSON.parse(localStorage.getItem('PP_Config_settings'));
+	if (localStorage.getItem('PP_Config_settings_' + ConfigName)) { // only read the settings 
+		ReadConfigSettings = JSON.parse(localStorage.getItem('PP_Config_settings_' + ConfigName));
 	}	
 
 	var levelTimes = ReadConfigSettings["levelTimes_"+whichConfig].split(",");
@@ -435,8 +437,9 @@ function createShowMoreText(){
 		document.getElementById("TabButtonMore").style.visibility = "hidden";
 		// so don't show the "More collections" tab
 	}else{
+		// Problem here: only the link is click/touchable - the whole row should be!!!!!!
 		for(x = 0; x<PP.InfoLinks[whichLinks].length; x++){			
-			showMoreText += '<tr><td><a class="PuzzleLink" title="' + PP.InfoLinks.links[PP.InfoLinks[whichLinks][x]].title +'"'
+			showMoreText += '<tr><td class="PuzzleLink" ><a class="PuzzleLink" title="' + PP.InfoLinks.links[PP.InfoLinks[whichLinks][x]].title +'"'
 				+ ' href="' +PP.InfoLinks.links[PP.InfoLinks[whichLinks][x]].href + '">'
 				+ PP.InfoLinks.links[PP.InfoLinks[whichLinks][x]].text+ '</a></td></tr>';
 		}
@@ -670,7 +673,7 @@ function NextLevel(nextOrNumber) {
 	}
 	
 	// change the URL to the new one - needs checks that URL exists in the form I want it - if it doesn't then create it
-	window.history.pushState({},'',baseURL+'?config='+whichConfig+'&pano='+whichPano+'&hh='+howDifficult); 
+	window.history.pushState({},'',baseURL+'?config='+whichConfig+'&pano='+whichPano); 
 	
 	CloseShowAll(); // close it if it was used to select a scene - and generally
 	lightsOut = false;
@@ -820,7 +823,7 @@ function myCopyFunction() {
 
 function CloseShareDiv(event){
 	myCopyFunction();
-	window.history.pushState({},'',baseURL+'?config='+whichConfig+'&pano='+whichPano+'&hh='+howDifficult);
+	window.history.pushState({},'',baseURL+'?config='+whichConfig+'&pano='+whichPano);
 	document.getElementById("shareDiv").style.visibility = "hidden";		
 	document.getElementById("close-share").style.visibility = "hidden";	
 }

@@ -1,20 +1,9 @@
 		//to change to next level of panorama puzzle
-        //set to one for the first run - will be overwritten by the saved settings 
+		//set to one for the first run - will be overwritten by the saved settings 
 		var whichPano = 1;
-
-		// which configuration to read for the current puzzle collection
-		var whichConfig = "default";   //possible values come out of the PanoPuzzle_config.js 
-
-        // time in ms the info stays before before going by itself
-		var infoTime = 15000;
-		
+	
 		// remember for reset
 		var timeoutHandle;
-
-        // percentage of tiles shuffeld on easy or hard
-        // the default is specified in PanoText.js for each panorama individually
-        var panoShuffleEasy = 3;
-        var panoShuffleHard = 90;
 
 		// for storing the results and overview list
 		var levelTimes = "";
@@ -125,17 +114,17 @@
 		// general size
 		var polysize = 100;
 		
-		//console.log(materials)
 		//
 		//  That's where it starts
 		//
 
 		// setting the scene, lights and basic stuff
 		init();
-		read_UI_values();
-	
+		
 		//check if the configuration file has changed
 		checkConfigChange();
+
+		read_UI_values();
 
 		//check URL if it contains a request for a certain tour or panorama
 		var sharelinkOK = checkURL();
