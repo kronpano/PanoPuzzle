@@ -74,7 +74,7 @@ This will prevent the script from complaining (warnings) that the texture is not
 
 I use PTGui to make this conversion - this allows to set the size and jpg compression - smaller files load quicker BUT you might get compression artifacts
 
-there are also free online services you can use to convert an equirectangular image to cube faces like
+there are also free online services you can use to convert an equirectangular image to cube faces like<br>
 https://360toolkit.co/convert-spherical-equirectangular-to-cubemap<br>
 or<br>
 https://jaxry.github.io/panorama-to-cubemap/<br>
