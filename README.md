@@ -1,7 +1,7 @@
 # PanoPuzzle
-A 360 panoramic puzzle game - create longer interactions with your 360 images
-<img src="screenshots/PanoPuzzleLogo_4.png" align="right" width="320" height="320">
 
+<img src="screenshots/PanoPuzzleLogo_4.png" align="right" width="320" height="320">
+A 360 panoramic puzzle game - create longer interactions with your 360 images
 <br><br>
 The game subdivides the cubefaces of a 360 panorama and rotates some of them.<br> 
 It is your job to find and rotate all the wrongly rotated ones and restore the 360 panorama to it's original glory.
