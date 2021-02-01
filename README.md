@@ -61,7 +61,7 @@ The directory is the path relative to the images directory
            top.jpg
 ```
 
-In the directory (e.g. pano1) the script expects the cube faces named back.jpg, bottom.jpg, front.jpg, left.jpg, right.jpg and top.jpg as you can see in the directory tree above. The directories are specified in the configuration file 
+In the directory (e.g. pano1) the script expects the cube faces named back.jpg, bottom.jpg, front.jpg, left.jpg, right.jpg and top.jpg as you can see in the directory tree above. The directories are specified in the <a href="https://github.com/kronpano/PanoPuzzle/blob/main/README.md#creating-and-changing-the-configuration-file">configuration file</a> 
 
 Please create the cube faces so that they are sized to a power of 2 e.g. 1024x1024 or 2048x2048
 This will prevent the script from complaining (warnings) that the texture is not a power of 2
