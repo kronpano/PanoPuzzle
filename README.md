@@ -75,8 +75,7 @@ I use PTGui to make this conversion - this allows to set the size and jpg compre
 there are also free online services you can use to convert an equirectangular image to cube faces like
 https://360toolkit.co/convert-spherical-equirectangular-to-cubemap<br>
 or<br>
-https://jaxry.github.io/panorama-to-cubemap/
-
+https://jaxry.github.io/panorama-to-cubemap/<br>
 and free tools for download (windows)<br>
 https://pragmar.com/qbit/
 
