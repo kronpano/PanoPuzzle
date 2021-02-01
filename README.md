@@ -1,5 +1,5 @@
 # PanoPuzzle
-A 360 panoramic puzzle game - getting longer interactions with 360 images
+A 360 panoramic puzzle game - create longer interactions with your 360 images
 <img src="screenshots/PanoPuzzleLogo_4.png" align="right" width="300" height="300">
   
 The game subdivides the cubefaces of a 360 panorama and rotates some of them.<br> 
