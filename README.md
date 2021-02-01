@@ -20,6 +20,8 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 
 ### Getting the code
 
+--- Still working on it
+
 ### Preparing the panoramic images
 The directory is the path relative to the images directory
 
@@ -86,19 +88,21 @@ Doing it "offline" also gives the user the possibility to choose a jpg compressi
 
 ### Creating and changing the configuration file
 
+--- Still working on it
+
 ## live examples
 ### over on PanoPuzzle.created-by.me
 my personal PanoPuzzle is over at https://panopuzzle.created-by.me <br>
 it consists of several collections of 360 panoramas
 
 ### here on GitHub to show a configuration with only one collection
-using the PanoPuzzle_config_1.js config file called by PanoPuzzleOneCollection.html the following puzzle web page was created 
+using the <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> config file called by <a href="PanoPuzzleOneCollection.html">PanoPuzzleOneCollection.html</a> the following puzzle web page was created 
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleOneCollection.html
 
 ### here on GitHub to show a configuration with several collections
-using the PanoPuzzle_config_2.js config file called by PanoPuzzleTwoCollection.html the following puzzle web page was created 
+using the <a href="include/PanoPuzzle_config_2.js">PanoPuzzle_config_2.js</a> config file called by <a href="PanoPuzzleTwoCollection.html">PanoPuzzleTwoCollection.html</a>  the following puzzle web page was created 
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleTwoCollection.html
 
 ### here on GitHub to show all the build in subdivision patterns
-using the PanoPuzzle_config_grid.js config file called by PanoPuzzleGridDemo.html the following puzzle web page was created 
+using the <a href="include/PanoPuzzle_config_grid.js">PanoPuzzle_config_grid.js</a> config file called by <a href="PanoPuzzleGridDemo.html">PanoPuzzleGridDemo.html</a>  the following puzzle web page was created 
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleGridDemo.html
