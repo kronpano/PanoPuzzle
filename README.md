@@ -26,6 +26,9 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 
 ## live examples
 ### over on PanoPuzzle.created-by.me
+my personal PanoPuzzle is over at https://panopuzzle.created-by.me
+it consists of several collections of 360 panoramas 
+
 ### here on GitHub to show a configuration with only one collection
 using the PanoPuzzle_config_1.js config file called by PanoPuzzleOneCollection.html the following puzzle web page was created 
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleOneCollection.html
