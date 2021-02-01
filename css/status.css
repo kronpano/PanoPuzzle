@@ -124,6 +124,13 @@
   transform: translate(-50%, -50%);
   border-radius: 15px;
   border:2px solid black;
+  /*
+  background-image: url("../PanoPuzzleLogo_4.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(170, 170, 170, 0.75);
+  */
   background-image: radial-gradient(rgba(170, 170, 170, 0.95),rgba(180, 180, 180, 0.6));
   text-align: center;
   font-Size: x-large;
@@ -356,36 +363,10 @@ tr:hover, .tabpassive:hover {
 
 a.PuzzleLink{
 	color: black;
+	display:block;
 	text-decoration: none;
 }
 
-a.PuzzleLink:hover{
-	color:blue;
+td.PuzzleLink{
+	width:100%;
 }
-
-.ribbon {
-	position: absolute;
-	right: 1px;
-	z-index: 1;
-	overflow: hidden;
-	width: 120px; height: 75px;
-	text-align: right;
-	background: rgba(255, 127, 80, 0);
-  }
-  .ribbon a {
-	font-size: 12px;
-	font-weight: normal;
-	color: rgb(0, 0, 0);
-	text-transform: uppercase;
-	text-align: center;
-	line-height: 20px;
-	transform: rotate(35deg);
-	-webkit-transform: rotate(35deg);
-	width: 180px;
-	display: block;
-	background: #34a7c1e1;
-	box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-	position: absolute;
-	top: 20px; right: -50px;
-	text-decoration:none;
-  }
