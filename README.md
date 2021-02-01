@@ -21,13 +21,73 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 ### Getting the code
 
 ### Preparing the panoramic images
+The directory is the path relative to the images directory
+
+```bash
+├───images
+   ├───collection2
+   │   ├───pano1
+   │   │       back.jpg
+   │   │       bottom.jpg
+   │   │       front.jpg
+   │   │       left.jpg
+   │   │       right.jpg
+   │   │       top.jpg
+   │   │
+   │   └───pano2
+   │           back.jpg
+   │           bottom.jpg
+   │           front.jpg
+   │           left.jpg
+   │           right.jpg
+   │           top.jpg
+   │
+   ├───pano1
+   │       back.jpg
+   │       bottom.jpg
+   │       front.jpg
+   │       left.jpg
+   │       right.jpg
+   │       top.jpg
+   │
+   └───pano2
+           back.jpg
+           bottom.jpg
+           front.jpg
+           left.jpg
+           right.jpg
+           top.jpg
+```
+
+
+In the directory (e.g. pano1) the script expects the cube faces named 
+* back.jpg 
+* bottom.jpg
+* front.jpg
+* left.jpg
+* right.jpg and
+* top.jpg
+
+Please create the cube faces so that they are sized to a power of 2 e.g. 1024x1024 or 2048x2048
+This will prevent the script from complaining (warnings) that the texture is not a power of 2
+
+
+
+I usually use PTGui to make this conversion - this allows to set the size and jpg compression - smaller files load quicker BUT you might get compression artifacts
+
+there are also free online services you can use to convert an equirectangular image to cube faces like
+
+https://jaxry.github.io/panorama-to-cubemap/
+
+and free tools for download
+https://pragmar.com/qbit/
 
 ### Creating and changing the configuration file
 
 ## live examples
 ### over on PanoPuzzle.created-by.me
-my personal PanoPuzzle is over at https://panopuzzle.created-by.me
-it consists of several collections of 360 panoramas 
+my personal PanoPuzzle is over at https://panopuzzle.created-by.me <br>
+it consists of several collections of 360 panoramas
 
 ### here on GitHub to show a configuration with only one collection
 using the PanoPuzzle_config_1.js config file called by PanoPuzzleOneCollection.html the following puzzle web page was created 
