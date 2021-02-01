@@ -27,8 +27,11 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 ## live examples
 ### over on PanoPuzzle.created-by.me
 ### here on GitHub to show a configuration with only one category
+using the PanoPuzzle_config_1.js config file called by PanoPuzzleOneCollection.html the following puzzle web page was created 
+https://kronpano.github.io/PanoPuzzle/PanoPuzzleObeCollection.html
 ### here on GitHub to show a configuration with several categories
-
-using the ...config the following web page was created 
+using the PanoPuzzle_config_2.js config file called by PanoPuzzleTwoCollection.html the following puzzle web page was created 
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleTwoCollection.html
 ### here on GitHub to show all the build in subdivision patterns
+using the PanoPuzzle_config_grid.js config file called by PanoPuzzleGridDemo.html the following puzzle web page was created 
+https://kronpano.github.io/PanoPuzzle/PanoPuzzleGridDemo.html
