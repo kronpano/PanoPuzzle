@@ -27,4 +27,5 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 ## live examples
 ### over on PanoPuzzle.created-by.me
 ### here on GitHub to show a configuration with only one category
-### here on Github to show a configuration with several categories
+### here on GitHub to show a configuration with several categories
+### here on GitHub to show all the build in subdivision patterns
