@@ -92,7 +92,7 @@ Doing it "offline" also gives the user the possibility to choose a jpg compressi
 
 ## live examples
 ### - over on panopuzzle.created-by.me
-my personal PanoPuzzle is over at https://panopuzzle.created-by.me <br>
+My PanoPuzzle - which started all of this can be seen under https://panopuzzle.created-by.me <br>
 it consists of several collections of 360 panoramas
 
 ### - on GitHub to show a configuration with only one collection
