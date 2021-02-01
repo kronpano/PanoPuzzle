@@ -96,12 +96,14 @@ my personal PanoPuzzle is over at https://panopuzzle.created-by.me <br>
 it consists of several collections of 360 panoramas
 
 ### here on GitHub to show a configuration with only one collection
-using the <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> config file called by <a href="PanoPuzzleOneCollection.html">PanoPuzzleOneCollection.html</a> the following puzzle web page was created 
-https://kronpano.github.io/PanoPuzzle/PanoPuzzleOneCollection.html
+using the <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> config file called by <a href="PanoPuzzleOneCollection.html">PanoPuzzleOneCollection.html</a> (at the end) the following puzzle web page was created 
+https://kronpano.github.io/PanoPuzzle/PanoPuzzleOneCollection.html<br>
+The configuration file has only one collection so there will be no possibility to change the collection
 
 ### here on GitHub to show a configuration with several collections
-using the <a href="include/PanoPuzzle_config_2.js">PanoPuzzle_config_2.js</a> config file called by <a href="PanoPuzzleTwoCollection.html">PanoPuzzleTwoCollection.html</a>  the following puzzle web page was created 
-https://kronpano.github.io/PanoPuzzle/PanoPuzzleTwoCollection.html
+using the <a href="include/PanoPuzzle_config_2.js">PanoPuzzle_config_2.js</a> config file called by <a href="PanoPuzzleTwoCollection.html">PanoPuzzleTwoCollection.html</a> (at the end)  the following puzzle web page was created 
+https://kronpano.github.io/PanoPuzzle/PanoPuzzleTwoCollection.html<br>
+The configuration file has four collections so you can choose which collection you want to play.
 
 ### here on GitHub to show all the build in subdivision patterns
 using the <a href="include/PanoPuzzle_config_grid.js">PanoPuzzle_config_grid.js</a> config file called by <a href="PanoPuzzleGridDemo.html">PanoPuzzleGridDemo.html</a>  the following puzzle web page was created 
