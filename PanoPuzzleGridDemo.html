@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>	
+	<title>PanoPuzzle</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="panorama, puzzle, 360,panopuzzle, game">
+	<meta name="description" content="A panorama puzzle game for 360 panoramas">
+	<meta name="author" content="kronpano">
+	<meta name="copyright" content="Bernd Kronmueller">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="canonical" href="//panopuzzle.created-by.me" />
+	<link rel="icon" href="favicon.png">
+
+	<meta property="og:type"        	content="website" />
+	<meta property="og:title"       	content="PanoPuzzle" />
+	<meta property="og:description" 	content="A 360 panoramic puzzle game" />
+	<meta property="og:image"       	content="https://raw.githubusercontent.com/kronpano/PanoPuzzle/main/screenshots/MainInfo.jpg" />
+	<meta property="og:url"         	content="https://panopuzzle.created-by.me" />		
+</head>
+
+<body>
+
+	<script src="include/three.min99.js"></script>
+	<script src="include/PuzzleControl.min.js"></script>
+	<script src="include/tween.min.js"></script>
+
+	<link rel="stylesheet" href="css/IconFonts.css" >
+	
+	<link rel="stylesheet" href="css/status.css" />
+	<link rel="stylesheet" href="css/UI.css" />
+	<link rel="stylesheet" href="css/share.css" />
+
+	<!-- UI element settings panel -->
+	<div id="mySidepanel" class="sidepanel">
+		<button title="Take me back - I want to play" class="closebtn" onclick="closeNav(event)" ontouchstart="closeNav(event)"><i class="fa fa-long-arrow-alt-left"></i></button> 
+		<button title="Jump directly to a puzzle or&#10;choose another puzzle collection" class="showall_btn" onclick="ShowAllIcon(event);" ontouchstart="ShowAllIcon(event);"><i class="fa fa-th"></i></button>
+		<button title="Get some info, the GitHub link&#10;to the source code and news" class="btn" onclick="InfoIcon(event);" ontouchstart="InfoIcon(event);"><i class="fa fa-info"></i>	</button>
+	
+		<div style="text-align: left;padding: 5px 0 0 10px;">Rotation</div>
+		<div class="rotateswitch">
+			<input type="checkbox" name="rotateswitch" class="rotateswitch-checkbox" id="myrotateswitch" onclick="RotateToggle()" ontouchstart="RotateToggle()" checked>
+			<label class="rotateswitch-label" for="myrotateswitch">
+				<span class="rotateswitch-inner"></span>
+				<span class="rotateswitch-switch"></span>
+			</label>
+		</div>
+		
+		<div style="text-align: left;padding: 5px 0 0 10px">Drag direction</div>
+		<div class="dragswitch">
+			<input type="checkbox" name="dragswitch" class="dragswitch-checkbox" id="mydragswitch" onclick="DragToggle()" ontouchstart="DragToggle()" checked>
+			<label class="dragswitch-label" for="mydragswitch">
+				<span class="dragswitch-inner"></span>
+				<span class="dragswitch-switch"></span>
+			</label>
+		</div> 
+		
+		<div style="text-align: left;padding: 5px 0 0 10px;">Tile counter</div>
+		<div class="countswitch">
+			<input type="checkbox" name="countswitch" class="countswitch-checkbox" id="mycountswitch" onclick="CountToggle()" ontouchstart="CountToggle()">
+			<label class="countswitch-label" for="mycountswitch">
+				<span class="countswitch-inner"></span>
+				<span class="countswitch-switch"></span>
+			</label>
+		</div>
+		
+		<div style="text-align: left;padding: 5px 0 0 10px;">Hints</div>
+		<div class="hintswitch">
+			<input type="checkbox" name="hintswitch" class="hintswitch-checkbox" id="myhintswitch" onclick="HintToggle()" ontouchstart="HintToggle()">
+			<label class="hintswitch-label" for="myhintswitch">
+				<span class="hintswitch-inner"></span>
+				<span class="hintswitch-switch"></span>
+			</label>
+		</div>
+	
+		<div class="slidecontainer" id="HintTimeSlider">
+			<div style="text-align: left;padding: 5px 0 0 10px;">Delay time: <span id="dtime"></span>s</div>
+			<input type="range" min="5" max="40" value="20" class="slider" id="myRange">
+		</div>
+	
+	
+		<div class="parent">
+			<div style="text-align: left;padding: 5px 0 0 10px;">Difficulty</div>
+			<div class="switch_3_ways">
+				<div id="easy" class="switch easy" onclick="difficulty('easy','UI')">Easy</div>
+				<div id="normal" class="switch normal" onclick="difficulty('normal','UI')">Normal</div>
+				<div id="hard" class="switch hard" onclick="difficulty('hard','UI')">Hard</div>
+				<div id="selector" class="selector"></div>
+			</div>
+		</div>
+	
+	<!-- end of settings panel-->
+	</div>
+
+	<!-- cog is not hidden when side panel is opened in landscape orientation -->
+	<button title="Change puzzle settings or go to the&#10;overview where you can select&#10;puzzles directly or go to&#10;different puzzle collections" class="settings" id="cogIcon" onclick="openNav(event)" ontouchstart="openNav(event)"><i class="fa fa-cog slow-spin"></i></button>
+
+	<!-- the main drawing area for panopuzzle-->
+	<div id="ThreeJS" style="position: absolute; left:0px; top:0px"></div>
+	
+	<!-- the status bar at the middle top - over written by text "x of y correct" if tile counter is set to visible-->
+	<div id="status">Status</div>
+	
+	<!-- same position of status - use to show the "completed in x seconds" text-->
+	<div id="complete">Solved</div>
+	
+	<!-- zoom in/out button top left-->
+	<div id="zoomIn" title="Solve the puzzle looking at the cube from the inside" class="glow" onClick="zoomin(event)" ontouchstart="zoomin(event)">Zoom in</div>
+	<div id="zoomOut" title="Solve the puzzle looking at the cube from the outside" class="glow" onClick="zoomout(event)" ontouchstart="zoomout(event)">Zoom out</div>
+	
+	<!-- next button top right once a level is completed-->
+	<div id="nextLevel" onClick="NextLevel(true)" ontouchstart="NextLevel(true)">Next</div>
+	
+	<!-- info field-->
+	<div id="info" onClick="InfoClose(event)" ontouch="InfoClose(event)">
+	</div>
+
+	<!-- Now I am trying to split the div in two to have current puzzles and the links to the other ones on tabs inside-->
+	<div id="showall">
+		<div>
+		  <button title="Jump directly to a puzzle of your choice" class="tabactive" id="TabButtonCurrent" onclick="openTab('showcurrent')">This collection</button>
+		  <button title="Go to a PanoPuzzle collection&#10;with a different theme&#10;&#10;You've got to play them all" class="tabpassive" id="TabButtonMore"   onclick="openTab('showmore')">More collections</button>
+		</div>
+		<div onClick="CloseShowAll(event)">
+			<div id="showcurrent" class="tab" onClick="CloseShowAll(event)"></div>
+			<div id="showmore" class="tab" onClick="CloseShowAll(event)"></div>
+			<button title='Take me back without a change' class="divclosebtn"><i class="fa fa-long-arrow-alt-left"></i></button> 
+		</div>
+	</div>
+
+	<!--<div id="shareDiv" class="shareDiv" onClick="CloseShareDiv(event)" ontouchstart="CloseShareDiv(event)"> -->
+	<div id="shareDiv" class="shareDiv" onClick="CloseShareDiv(event)">
+		<!-- when showing shareDiv via PuzzeUI.js ->ShowShare fill in the URL/href and title/descriptions for the current puzzle -->
+	</div>
+
+	<script>
+		function openTab(TabName) {
+			if(TabName == "showcurrent"){
+				document.getElementById(TabName).style.display = "block";
+				document.getElementById(TabName).style.visibility = "visible";
+				document.getElementById("showmore").style.display = "none";
+				document.getElementById("TabButtonCurrent").className = "tabactive";
+				document.getElementById("TabButtonMore").className = "tabpassive";
+			}else{
+				document.getElementById(TabName).style.display = "block";
+				document.getElementById(TabName).style.visibility = "visible";
+				document.getElementById("showcurrent").style.display = "none";
+				document.getElementById("TabButtonCurrent").className = "tabpassive";
+				document.getElementById("TabButtonMore").className = "tabactive";				
+			}
+		}
+	</script>
+
+	<!-- full screen button bottom right-->
+	<div id="FullScreen" onClick="openFullscreen(event)" ontouchstart="openFullscreen(event)">
+		<button class="fs-btn"><i class="fa fa-expand-arrows-alt"></i></button>
+	</div>
+		<div id="ExitFullScreen" onClick="exitFullscreen(event)" ontouchstart="exitFullscreen(event)">
+		<button class="fs-btn"><i class="fa fa-compress-arrows-alt"></i></button>
+	</div>
+
+	<!-- share button bottom right-->
+	<div id="share" onClick="ShowShare(event)" ontouch="ShowShare(event)">
+		<button class="fs-btn"><i class="fa fa-share-alt"></i></button>
+	</div>
+	<div id="close-share" onClick="CloseShareDiv(event)" ontouch="CloseShareDiv(event)">
+		<button class="fs-btn"><i class="fa fa-slash"></i></button>
+	</div>
+
+
+	<!-- 	THIS INCLUDE CONTAINS THE INFORMATION ABOUT THE PANORAMA TO BE PUZZLED
+			THIS WILL NEED TO BE SET BY THE USER TO CONTAIN THE CORRECT TEXT, SCRAMBLING PATTERN, 
+			GRID COLOUR AND SOURCE DIRECTORY FOR YOUR PANORAMAS -->
+
+	<!-- those 3 files need to be loaded in this order -->
+
+	<!-- loads all the panorama information and the intro text -->
+	<script src="include/PanoPuzzle_config_grid.js"></script> 
+	<!-- load all the functions which deal with the settings panel-->	
+	<script src="include/PuzzleUI.js"></script>
+	<!-- the script which does the actual work -->
+	<script src="include/PanoPuzzle.js"></script>
+
+
+</body>
+
+</html>
