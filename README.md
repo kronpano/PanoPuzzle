@@ -21,6 +21,8 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 ### Getting the code
 
 --- Still working on it
+You can always just get the whole thing as a zip file - the directory structure needs to be observed.
+Will try to put some zip files as releases together.
 
 ### Preparing the panoramic images
 The directory is the path relative to the images directory
@@ -83,9 +85,6 @@ Doing it "offline" also gives the user the possibility to choose a jpg compressi
 ### Creating and changing the configuration file
 
 --- Still working on it
-
-You can always just get the whole thing as a zip file - the directory structure needs to be observed.
-Will try to put some zip files as releases together.
 
 ## live examples
 ### - over on panopuzzle.created-by.me
