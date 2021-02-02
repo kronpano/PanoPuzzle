@@ -85,6 +85,7 @@ Doing it "offline" also gives the user the possibility to choose a jpg compressi
 ### Creating and changing the configuration file
 
 --- Still working on it
+The example configuration files like <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> have a comment section at the start and a descriptiopn of all the grid patterns at the end but a better explanation will follow soon.
 
 ## live examples
 ### - over on panopuzzle.created-by.me
