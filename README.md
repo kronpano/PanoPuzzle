@@ -84,6 +84,9 @@ Doing it "offline" also gives the user the possibility to choose a jpg compressi
 
 --- Still working on it
 
+You can always just get the whole thing as a zip file - the directory structure needs to be observed.
+Will try to put some zip files as releases together.
+
 ## live examples
 ### - over on panopuzzle.created-by.me
 My PanoPuzzle - which started all of this can be seen under https://panopuzzle.created-by.me <br>
