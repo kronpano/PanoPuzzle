@@ -20,7 +20,7 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 
 ### Getting the code
 
---- Still working on it
+--- Still working on it<br>
 You can always just get the whole thing as a zip file - the directory structure needs to be observed.
 Will try to put some zip files as releases together.
 
@@ -84,7 +84,7 @@ Doing it "offline" also gives the user the possibility to choose a jpg compressi
 
 ### Creating and changing the configuration file
 
---- Still working on it
+--- Still working on it<br>
 The example configuration files like <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> have a comment section at the start and a descriptiopn of all the grid patterns at the end but a better explanation will follow soon.
 
 ## live examples
