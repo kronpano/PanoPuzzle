@@ -90,7 +90,7 @@ The example configuration files like <a href="include/PanoPuzzle_config_1.js">Pa
 ## live examples
 ### - over on panopuzzle.created-by.me
 My PanoPuzzle - which started all of this can be seen under https://panopuzzle.created-by.me <br>
-it consists of several collections of 360 panoramas
+it consists of several collections with over 80 panorama puzzles at the moment
 
 ### - on GitHub to show a configuration with only one collection
 Using the <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> config file called by <a href="PanoPuzzleOneCollection.html">PanoPuzzleOneCollection.html</a> (at the end) the following puzzle web page was created 
