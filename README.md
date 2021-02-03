@@ -106,10 +106,10 @@ The configuration file has four collections so you can choose which collection y
 Using the <a href="include/PanoPuzzle_config_grid.js">PanoPuzzle_config_grid.js</a> config file called by <a href="PanoPuzzleGridDemo.html">PanoPuzzleGridDemo.html</a>  the following puzzle web page was created 
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleGridDemo.html
 
-##ToDo
-Configuration file validation<br>
+## ToDo
+#### Configuration file validation
 The configuration file is the heart and soul which contains all the information - a simple typo in there can mean everything works fine - EXCEPT for this one puzzle which will leave the screen blank because - the directory can not be found, the colour/pattern of the grid not defined because of a typo, .....
 Thought it would be a good idea to have some sort of "Config file validator" which will create a html page which shows all the information and flags up potential errors.
 
-Audio option<br>
+####Audio option
 THought it would be nice to have an audio option which will start playing information, music.... onece a certain percentage of the puzzle is soleved.
