@@ -112,4 +112,4 @@ The configuration file is the heart and soul which contains all the information 
 Thought it would be a good idea to have some sort of "Config file validator" which will create a html page which shows all the information and flags up potential errors.
 
 #### Audio option
-THought it would be nice to have an audio option which will start playing information, music.... onece a certain percentage of the puzzle is soleved.
+Thought it would be nice to have an audio option which will start playing information or music once a certain percentage of the puzzle is solved. Should be an optional entry in the config file.
