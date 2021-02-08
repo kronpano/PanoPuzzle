@@ -24,11 +24,12 @@ Go here to download the <a href="https://github.com/kronpano/PanoPuzzle/releases
 When you unzip it it will create the directory structure with all the include/css/webfont files needed.<br>
 The main directory contains the 3 html files described in the ReadMe under <a href="https://github.com/kronpano/PanoPuzzle#live-examples">live examples</a> - one collection, multiple collections, grid demo.<br>
 Those files use their respective config files in the include folder<br>
-So all you need to do is copy one of the config files - make a copy - adjust the content for your puzzle<br>
-That means point them to the correct image directories and fill in all the information required (described in the ReadMe)<br>
-Also - create the cube face images for the puzzles and put them in the directories - as described below<br>
-
-You can always just get the whole thing as a zip file - the directory structure needs to be observed!!
+So all you need to do is 
+* copy one of the config files and one of the html files
+* edit the html file so it points to your config (towards the end)
+* edit the content of the config file so it fits the content of your puzzle<br>
+That means point them to the correct image directories and fill in all the information required (described in the ReadMe)
+* create the cube face images for the puzzles and put them in the directories - as described below<br>
 
 ### Preparing the panoramic images
 The directory is the path relative to the images directory
