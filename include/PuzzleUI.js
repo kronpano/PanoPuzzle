@@ -705,9 +705,9 @@ function ShowShare(event){
 	document.getElementById("close-share").style.visibility = "visible";
 	
 	// gets the unique ID out from PP_config - if the config changes the shared link will still point to the correct puzzle
-	var CurrentURL = encodeURIComponent(window.location).replace(/config.*%26hh/,"uid="+PP_config[whichConfig][whichPano][5]+"%26hh");
+	var CurrentURL = encodeURIComponent(window.location).replace(/config.*/,"uid="+PP_config[whichConfig][whichPano][5]);
 
-	window.history.pushState({},'',baseURL+'?uid='+PP_config[whichConfig][whichPano][5]+'&hh='+howDifficult);
+	window.history.pushState({},'',baseURL+'?uid='+PP_config[whichConfig][whichPano][5]);
 	// get the title out of the PP_config and encode it so it can be used for sharing
 	var CurrentTitle = encodeURIComponent(PP_config[whichConfig][whichPano][0].replace(/<[^>]+>/g, ' '));
 
@@ -720,7 +720,7 @@ function ShowShare(event){
 		document.getElementsByTagName('meta')[8].content += ": "+ShortTitle;  <- meta[8] is the og:description in my case
 	*/
 
-	var ImgURL=encodeURIComponent("https://preview.redd.it/9u61n0v6f8q21.jpg?width=1495&format=pjpg&auto=webp&s=2ea5f01b0008fc934ae2c8b22d70d9fb48ed7a79");
+	var ImgURL=encodeURIComponent("https://raw.githubusercontent.com/kronpano/PanoPuzzle/main/screenshots/MainInfo.jpg");
 
 
 	//alert(CurrentURL +"----"+CurrentTitle);
