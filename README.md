@@ -20,9 +20,15 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 
 ### Getting the code
 
---- Still working on it<br>
-You can always just get the whole thing as a zip file - the directory structure needs to be observed.
-Will try to put some zip files as releases together.
+Go here to download the <a href="https://github.com/kronpano/PanoPuzzle/releases/latest">latest release</a> as a zip file.<br>
+When you unzip it it will create the directory structure with all the include/css/webfont files needed.<br>
+The main directory contains the 3 html files mentioned in the ReadMe - one collection, multiple collections, grid demo.<br>
+Those files use their respective config files in the include folder<br>
+So all you need to do is copy one of the config files - make a copy - adjust the content for your puzzle<br>
+That means point them to the correct image directories and fill in all the information required (described in the ReadMe)<br>
+Also - create the cube face images for the puzzles and put them in the directories - as described below<br>
+
+You can always just get the whole thing as a zip file - the directory structure needs to be observed!!
 
 ### Preparing the panoramic images
 The directory is the path relative to the images directory
