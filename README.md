@@ -262,23 +262,23 @@ Because that file is so important there is a ToDo point of writing a validator f
 
 
 ## live examples
-### - over on panopuzzle.created-by.me
-My PanoPuzzle - which started all of this can be seen under https://panopuzzle.created-by.me <br>
+### - the live <a href="https://panopuzzle.created-by.me">PanoPuzzle</a>
+My PanoPuzzle web page - which started all of this can be seen under https://panopuzzle.created-by.me <br>
 it consists of several collections with over 80 panorama puzzles at the moment
 
 ### - on GitHub to show a configuration with only one collection
-Using the <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> config file called by <a href="PanoPuzzleOneCollection.html">PanoPuzzleOneCollection.html</a> (at the end) the following puzzle web page was created 
-https://kronpano.github.io/PanoPuzzle/PanoPuzzleOneCollection.html<br>
-The configuration file has only one collection so there will be no possibility to change the collection
+https://kronpano.github.io/PanoPuzzle/PanoPuzzleOneCollection.html<br><br>
+The configuration file has only one collection so there will be no possibility to change the collection.<br>
+Using the <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> config file in <a href="PanoPuzzleOneCollection.html">PanoPuzzleOneCollection.html</a> 
 
 ### - on GitHub to show a configuration with several collections
-Using the <a href="include/PanoPuzzle_config_2.js">PanoPuzzle_config_2.js</a> config file called by <a href="PanoPuzzleTwoCollection.html">PanoPuzzleTwoCollection.html</a> (at the end)  the following puzzle web page was created 
-https://kronpano.github.io/PanoPuzzle/PanoPuzzleTwoCollection.html<br>
-The configuration file has four collections so you can choose which collection you want to play.
-
+https://kronpano.github.io/PanoPuzzle/PanoPuzzleTwoCollection.html<br><br>
+The configuration file has four collections so you can choose which collection you want to play.<br>
+Using the <a href="include/PanoPuzzle_config_2.js">PanoPuzzle_config_2.js</a> config file in <a href="PanoPuzzleTwoCollection.html">PanoPuzzleTwoCollection.html</a> 
 ### - on GitHub to show all the build in subdivision patterns
-Using the <a href="include/PanoPuzzle_config_grid.js">PanoPuzzle_config_grid.js</a> config file called by <a href="PanoPuzzleGridDemo.html">PanoPuzzleGridDemo.html</a>  the following puzzle web page was created 
-https://kronpano.github.io/PanoPuzzle/PanoPuzzleGridDemo.html
+https://kronpano.github.io/PanoPuzzle/PanoPuzzleGridDemo.html<br><br>
+Using the <a href="include/PanoPuzzle_config_grid.js">PanoPuzzle_config_grid.js</a> config file called by <a href="PanoPuzzleGridDemo.html">PanoPuzzleGridDemo.html</a>  creates the web page which demonstrates the different built in grid patterns.
+
 
 ## ToDo
 #### Configuration file validation
