@@ -294,3 +294,6 @@ Thought it would be a good idea to have some sort of "Config file validator" whi
 
 #### Audio option
 Thought it would be nice to have an audio option which will start playing information or music once a certain percentage of the puzzle is solved. Should be an optional entry in the config file.
+
+#### Share image preview
+Add a description on how to change the share image preview
