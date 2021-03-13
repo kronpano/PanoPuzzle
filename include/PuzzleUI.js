@@ -660,14 +660,22 @@ function CloseShowAll() {
 
 
 function NextLevel(nextOrNumber) {
+	
 	if(typeof(nextOrNumber) === typeof(true)){ // if argument is true just go to the next one
 		// checks length of pano description array to decide if there are more panoramas to display	
-			if (whichPano < (PP_config[whichConfig].length -1)){
-				whichPano++;
-			}else{
-				// show a message that this collection is finished but there are more.....
-				whichPano =1
-			}
+
+		// if there is only one puzzle in the configuration AND the config provides a Link4Next element - next will get you to the link in the config file if it is provided
+		if((PP_config[whichConfig].length == 2) &&  document.getElementById('Link4Next')){
+			window.location = document.getElementById('Link4Next'); 
+			return;
+		}
+
+		if (whichPano < (PP_config[whichConfig].length -1)){
+			whichPano++;
+		}else{
+			// show a message that this collection is finished but there are more.....
+			whichPano =1
+		}
 	}else{ // if the argument is a number go to that one
 		whichPano = nextOrNumber;			
 	}
