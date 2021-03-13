@@ -43,7 +43,7 @@ const infoTime = 15000;
 
 // percentage of tiles shuffeld on easy or hard
 // the default is specified in PanoText.js for each panorama individually
-const panoShuffleEasy = 2;
+const panoShuffleEasy = 10;
 const panoShuffleHard = 90;
 
 
