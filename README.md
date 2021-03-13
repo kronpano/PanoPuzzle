@@ -1,4 +1,4 @@
-# <a href="https://panopuzzle.created-by.me/">PanoPuzzle</a>
+# PanoPuzzle
 <img src="screenshots/PanoPuzzleLogo_4.png" align="right" width="320" height="320">
 <br>
 A 360 panoramic puzzle game - create longer interactions with your 360 images
@@ -20,16 +20,9 @@ The game also allows you to zoom out and solve the puzzle looking at the cube fr
 
 ### Getting the code
 
-Go here to download the <a href="https://github.com/kronpano/PanoPuzzle/releases/latest">latest release</a> as a zip file.<br>
-When you unzip it it will create the directory structure with all the include/css/webfont files needed.<br>
-The main directory contains the 3 html files described in the ReadMe under <a href="https://github.com/kronpano/PanoPuzzle#live-examples">live examples</a> - one collection, multiple collections, grid demo.<br>
-Those files use their respective config files in the include folder<br>
-So all you need to do is 
-* copy one of the config files and one of the html files
-* edit the html file so it points to your config (towards the end)
-* edit the content of the config file so it fits the content of your puzzle<br>
-That means point them to the correct image directories and fill in all the information required (described in the ReadMe)
-* create the cube face images for the puzzles and put them in the directories - as described below<br>
+--- Still working on it<br>
+You can always just get the whole thing as a zip file - the directory structure needs to be observed.
+Will try to put some zip files as releases together.
 
 ### Preparing the panoramic images
 The directory is the path relative to the images directory
@@ -282,10 +275,14 @@ Using the <a href="include/PanoPuzzle_config_1.js">PanoPuzzle_config_1.js</a> co
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleTwoCollection.html<br><br>
 The configuration file has four collections so you can choose which collection you want to play.<br>
 Using the <a href="include/PanoPuzzle_config_2.js">PanoPuzzle_config_2.js</a> config file in <a href="PanoPuzzleTwoCollection.html">PanoPuzzleTwoCollection.html</a> 
+
 ### - on GitHub to show all the build in subdivision patterns
 https://kronpano.github.io/PanoPuzzle/PanoPuzzleGridDemo.html<br><br>
 Using the <a href="include/PanoPuzzle_config_grid.js">PanoPuzzle_config_grid.js</a> config file called by <a href="PanoPuzzleGridDemo.html">PanoPuzzleGridDemo.html</a>  creates the web page which demonstrates the different built in grid patterns.
 
+### - on GitHub a "one puzzle and out" demo
+https://kronpano.github.io/PanoPuzzle/OnePuzzleAndOut.html<br><br>
+Using the <a href="include/PanoPuzzle_config_OneAndOut.js">PanoPuzzle_config_OneAndOut.js</a> config file called by <a href="OnePuzzleAndOut.html">OnePuzzleAndOut.html</a>  creates a single puzzle. The config file via the Link4Next element provides a link on where to go when the puzzle is finished.
 
 ## ToDo
 #### Configuration file validation
@@ -294,6 +291,3 @@ Thought it would be a good idea to have some sort of "Config file validator" whi
 
 #### Audio option
 Thought it would be nice to have an audio option which will start playing information or music once a certain percentage of the puzzle is solved. Should be an optional entry in the config file.
-
-#### Share image preview
-Add a description on how to change the share image preview
