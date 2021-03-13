@@ -77,7 +77,7 @@ PP = {
 		<h4>PanoPuzzle - Single puzzle demo</h4>
 		<h6><div id='instruction'>Click/touch the puzzle pieces to rotate them until the puzzle is solved.<br>Zoom out lets you look at/solve the puzzle from the outside of a cube.</div></h6>
 		<h5><div id='currentlyPlaying' class='glow'>info of config</div></h5>
-		<h6>Created by Bernd Kronmueller © &nbsp&nbspv1.2</h6>
+		<h6>Created by Bernd Kronmueller © &nbsp&nbspv1.3</h6>
         `						
 	}
 }		
